@@ -9,7 +9,7 @@ description = "A geometry-shader-based, global CUDA sorted high-performance 3D G
 readme = "readme.md"
 license = { file = "license" }
 authors = [{ email = "zhenx@zju.edu.cn" }, { name = "Zhen Xu" }]
-requires-python = ">=3.8"
+requires-python = ">=3.7"
 dynamic = ["dependencies"]
 
 [project.urls]
