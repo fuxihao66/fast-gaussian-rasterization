@@ -74,7 +74,7 @@ if 'CUDA_VISIBLE_DEVICES' in os.environ:
 
 # fmt: off
 """Extends OpenGL.EGL with definitions necessary for headless rendering."""
-# os.environ['PYOPENGL_PLATFORM'] = 'egl'
+os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 from OpenGL.platform import ctypesloader  # pylint: disable=g-bad-import-order
 try:
