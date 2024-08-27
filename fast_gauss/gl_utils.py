@@ -16,7 +16,7 @@ if 'OpenGL' not in sys.modules:
         eglctx = eglContextManager()
     except Exception as e:
         log(yellow(f'Could not import EGL related modules. {type(e).__name__}: {e}'))
-        # os.environ['PYOPENGL_PLATFORM'] = ''
+        os.environ['PYOPENGL_PLATFORM'] = ''
         eglctx = None
 else:
     eglctx = None
@@ -25,8 +25,8 @@ def is_wsl2():
     """Returns True if the current environment is WSL2, False otherwise."""
     return exists("/etc/wsl.conf") and os.environ.get("WSL_DISTRO_NAME")
 
-# if is_wsl2():
-#     os.environ['PYOPENGL_PLATFORM'] = 'glx'
+if is_wsl2():
+    os.environ['PYOPENGL_PLATFORM'] = 'glx'
 
 import OpenGL.GL as gl
 
